@@ -17,14 +17,12 @@
       <h3>投稿一覧</h3>
       <div class="main_post_box">
       @foreach($posts as $post)
-        <div class="post_box">
-        {{ $post->title }}
-          <!-- <p>写真</p>
-          <p>価格帯</p>
-          <p>エリア</p>
-          <p>業者</p> -->
+        <a href="{{route('posts.show',['id' => $post->id]) }}" class="post_box_post">
+          <div class="post_box">
+            {{ $post->title }}
+          </div>
+        </a>
       @endforeach
-        </div>
       </div>
     </div>
 

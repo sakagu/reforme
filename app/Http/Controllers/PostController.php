@@ -33,4 +33,15 @@ class PostController extends Controller
         return redirect()->route('posts');
     }
 
+    public function show(int $id)
+    {
+        $post = Post::find($id);
+
+        return view('posts/show', [
+            'post' => $post,
+        ]);
+    }
+
 }
+
+
