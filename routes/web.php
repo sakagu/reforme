@@ -19,3 +19,4 @@ Route::get('/', 'PostController@index')->name('posts');
 Route::get('/posts/create', 'PostController@showCreateForm')->name('posts.create');
 Route::post('/posts/create', 'PostController@create');
 Auth::routes();
+Route::get('/posts/{id}/show', 'PostController@show')->name('posts.show');
