@@ -20,15 +20,15 @@
       </div>
     </div>
     <div class="header_right">
-      <div class="header_user">
+      <div class="header_right_box">
         <p>ユーザー名</p>
       </div>
-      <div class="header_login">
+      <div class="header_right_box">
         <p>ログイン</p>
       </div>
-      <div class="header_post">
-        <p>投稿する</p>
-      </div>
+      <a href="{{route('posts.create')}}" class="header_rightbox">
+        投稿する
+      </a>
     </div>
  </div>
 </header>
@@ -38,3 +38,4 @@
 @yield('scripts')
 </body>
 </html>
+

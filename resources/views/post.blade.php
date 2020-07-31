@@ -16,11 +16,14 @@
     <div class="main_post"> 
       <h3>投稿一覧</h3>
       <div class="main_post_box">
+      @foreach($posts as $post)
         <div class="post_box">
-          <p>写真</p>
+        {{ $post->title }}
+          <!-- <p>写真</p>
           <p>価格帯</p>
           <p>エリア</p>
-          <p>業者</p>
+          <p>業者</p> -->
+      @endforeach
         </div>
       </div>
     </div>

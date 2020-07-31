@@ -14,3 +14,7 @@ background-color: #C0C0C0;
   display: flex;
   margin-left: auto;
 }
+
+.header_right_box {
+  margin-right: 20px;
+}

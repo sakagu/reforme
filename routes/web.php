@@ -15,4 +15,7 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'PostController@index')->name('posts');
+Route::get('/posts/create', 'PostController@showCreateForm')->name('posts.create');
+Route::post('/posts/create', 'PostController@create');
+Auth::routes();
