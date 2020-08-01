@@ -4,24 +4,45 @@
   <div class="main">
 
     <div class="main_title">
-      <h2>あなただけのリフォームを教えてください</h2>
+      <p>Reformeとは・・・</p>
+      <p>住宅リフォーム専用投稿サイトです</p>
+      <p>あなただけのリフォームを教えてください!!</p>
     </div>
     <div class="main_explanation">
-      <p>住宅リフォーム専用投稿サイトです</p>
-      <p>デザインやこだわりポイントを自慢してみましょう</p>
-      <p>リフォームをご検討の方は参考に！</p>
-      <p>業者紹介も掲載</p>
+      <div class="main_explanation_1">
+        <div class="main_explanation_1_1">
+         <p>デザインやこだわりポイントを自慢してみましょう！</p>
+        </div>
+      </div>
+      <div class="main_explanation_2">
+        <div class="main_explanation_2_1">
+          <p>リフォームをご検討の方は参考に！下調べは重要です！</p>
+        </div>
+      </div>
+      <div class="main_explanation_3">
+        <div class="main_explanation_3_1">
+          <p>リフォーム業者を検索してみよう！お願したい会社が見つかるかも！</p>
+        </div>
+      </div>
     </div>
 
     <div class="main_post"> 
-      <h3>投稿一覧</h3>
+      <div class="main_post_title"> 
+        <h3>~ New Reform ~</h3>
+      </div>
       <div class="main_post_box">
-        <div class="post_box">
-          <p>写真</p>
-          <p>価格帯</p>
-          <p>エリア</p>
-          <p>業者</p>
-        </div>
+        @foreach($posts as $post)
+          <div class="main_post_box_contetnt">
+            <a href="{{route('posts.show',['id' => $post->id]) }}" class="post_box_post">
+              <div class="post_title">
+                {{ $post->title }}
+              </div>
+              <div class="post_image">
+                <img src="{{asset('image/'.$post->image) }}" alt="{{ $post->image }}">
+              </div>
+            </a>
+          </div>
+        @endforeach
       </div>
     </div>
 

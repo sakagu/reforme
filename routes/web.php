@@ -15,4 +15,13 @@
 //     return view('welcome');
 // });
 
-Route::get('/', 'PostController@index');
+Route::get('/', 'PostController@index')->name('posts');
+Route::group(['middleware' => 'auth'], function() {
+Route::get('/posts/create', 'PostController@showCreateForm')->name('posts.create');
+Route::post('/posts/create', 'PostController@create');
+Route::get('/posts/{id}/show', 'PostController@show')->name('posts.show');
+Route::get('/posts/{id}/edit', 'PostController@showedit')->name('posts.edit');
+Route::post('/posts/{id}/edit', 'PostController@edit');
+Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
+});
+Auth::routes();
