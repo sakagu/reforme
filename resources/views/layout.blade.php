@@ -19,23 +19,39 @@
         <h2>〜自分だけのリフォーム〜</h2>
       </div>
     </div>
-    <div class="header_right">
-      <div class="header_right_box">
-        <p>ユーザー名</p>
+    @if(Auth::check())
+      <div class="header_right">
+          <div class="header_right_box">
+              <p>{{ Auth::user()->name }}さん</p>
+          </div>
+          <div class="header_right_box">
+            <a href="#" id="logout" class="my-navbar-item">ログアウト</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+              {{ csrf_field() }}
+            </form>
+          </div>
+          <a href="{{route('posts.create')}}" class="header_rightbox">
+            投稿する
+          </a>
       </div>
-      <div class="header_right_box">
-        <p>ログイン</p>
-      </div>
-      <a href="{{route('posts.create')}}" class="header_rightbox">
-        投稿する
-      </a>
-    </div>
+    @else
+      <a class="my-navbar-item" href="{{ route('login') }}">ログイン</a>
+          ｜
+      <a class="my-navbar-item" href="{{ route('register') }}">会員登録</a>
+    @endif
  </div>
+ @if(Auth::check())
+  <script>
+    document.getElementById('logout').addEventListener('click', function(event) {
+      event.preventDefault();
+      document.getElementById('logout-form').submit();
+    });
+  </script>
+@endif
 </header>
 <main>
   @yield('content')
 </main>
-@yield('scripts')
+<!-- @yield('scripts') -->
 </body>
 </html>
-
