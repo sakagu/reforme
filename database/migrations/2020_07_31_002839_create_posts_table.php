@@ -17,9 +17,9 @@ class CreatePostsTable extends Migration
             $table->increments('id');
             $table->string('title', 20);
             $table->text('text');
-            $table->string('image');
-            $table->integer('cost')->nullable()->change();
-            $table->string('store')->nullable()->change();
+            $table->string('image')->nullable();
+            $table->integer('cost')->nullable();
+            $table->string('store')->nullable();
             $table->timestamps();
 
             $table->integer('user_id')->unsigned();

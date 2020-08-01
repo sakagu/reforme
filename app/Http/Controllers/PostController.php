@@ -4,8 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use App\Http\Requests\CreatePost;
+use App\Http\Requests\EditPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+
 
 class PostController extends Controller
 {
@@ -42,7 +44,7 @@ class PostController extends Controller
         ]);
     }
 
-    public function edit(int $id)
+    public function showedit(int $id)
     {
         $post = Post::find($id);
 
@@ -50,6 +52,27 @@ class PostController extends Controller
             'post' => $post,
         ]);
     }
+
+    public function edit(int $id, EditPost $request)
+    {
+
+        $post = Post::find($id);
+        $post->title = $request->title;
+        $post->text = $request->text;
+        if(isset($request->image)){
+            $post->image = $request->image;
+        }
+        $post->save();
+
+        return redirect()->route('posts');
+    
+    }
+
+    public function delete(int $id, Request $request)
+    {
+        Post::find($id)->delete();
+
+        return redirect()->route('posts');
+    }
+    
 }
-
-
