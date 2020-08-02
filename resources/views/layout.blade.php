@@ -20,22 +20,22 @@
     @if(Auth::check())
       <div class="header_right">
           <div class="header_right_box">
-              <p>{{ Auth::user()->name }}さん</p>
+              <p>{{ Auth::user()->name }}</p>
           </div>
           <div class="header_right_box">
-            <a href="#" id="logout" class="my-navbar-item">ログアウト</a>
+            <a href="#" id="logout" class="my-navbar-item">logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
             </form>
           </div>
           <a href="{{route('posts.create')}}" class="header_rightbox">
-            投稿する
+          <i class="fas fa-pencil-alt"></i>
           </a>
-      </div>
-    @else
-      <a class="my-navbar-item" href="{{ route('login') }}">ログイン</a>
+          @else
+          <a class="my-navbar-item" href="{{ route('login') }}">login</a>
           ｜
-      <a class="my-navbar-item" href="{{ route('register') }}">会員登録</a>
+          <a class="my-navbar-item" href="{{ route('register') }}">register</a>
+      </div>
     @endif
  </div>
  @if(Auth::check())

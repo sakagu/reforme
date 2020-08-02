@@ -14,7 +14,7 @@
     
     <div class="main_post"> 
       <div class="main_post_title"> 
-        <h3>~ New Reform ~</h3>
+        <h3>~ New arrival ~</h3>
       </div>
       <div class="main_post_box">
         @foreach($posts as $post)

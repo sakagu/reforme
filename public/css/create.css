@@ -13,7 +13,7 @@
 .post_create_form_box {
   display: flex;
   justify-content: center;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
 }
 
 .form-text {
