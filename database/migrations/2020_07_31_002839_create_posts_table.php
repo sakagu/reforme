@@ -18,7 +18,7 @@ class CreatePostsTable extends Migration
             $table->string('title', 20);
             $table->text('text');
             $table->string('image')->nullable();
-            $table->integer('cost')->nullable();
+            $table->string('cost')->nullable();
             $table->string('store')->nullable();
             $table->timestamps();
 

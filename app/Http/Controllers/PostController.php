@@ -33,6 +33,8 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->title;
         $post->text = $request->text;
+        $post->cost = $request->cost;
+        $post->store = $request->store;
         
         // $path = $request->file('image')->store('public/storage');
         // $post->image = basename($path);

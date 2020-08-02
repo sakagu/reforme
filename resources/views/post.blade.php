@@ -30,7 +30,7 @@
               {{ $post->user->name }}さん
             </div>
             <div class="post_user">
-              業者:{{ $post->store }}
+              業者名:{{ $post->store }}
             </div>
           </a>
         </div>

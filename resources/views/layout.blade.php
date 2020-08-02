@@ -23,7 +23,7 @@
               <p>{{ Auth::user()->name }}</p>
           </div>
           <div class="header_right_box">
-            <a href="#" id="logout" class="my-navbar-item">logout</a>
+            <a href="#" id="logout" class="my-navbar-item">Logout</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
             </form>
@@ -31,10 +31,15 @@
           <a href="{{route('posts.create')}}" class="header_rightbox">
           <i class="fas fa-pencil-alt"></i>
           </a>
-          @else
-          <a class="my-navbar-item" href="{{ route('login') }}">login</a>
-          ｜
-          <a class="my-navbar-item" href="{{ route('register') }}">register</a>
+      </div>
+    @else
+      <div class="header_right">
+        <div class="header_right_box">
+          <a class="my-navbar-item" href="{{ route('login') }}">Login</a>
+        </div>
+        <div class="header_right_box">
+          <a class="my-navbar-item" href="{{ route('register') }}"><i class="fas fa-user-alt"></i></a>
+        </div>
       </div>
     @endif
  </div>
