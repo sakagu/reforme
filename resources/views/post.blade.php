@@ -67,7 +67,7 @@
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
           <div class="modal-image">
-            <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 500px; height: 500px;"/>
+            <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 600px; height: 600px;"/>
           </div>
           <div class="modal-text">
             {{$post->text}}
@@ -78,8 +78,6 @@
           <div class="modal-stpre">
             {{$post->store}}
           </div>
-
-          <a class="js-modal-close" href="">閉じる</a>
         </div><!--modal__inner-->
     </div><!--modal-->
     @endforeach
