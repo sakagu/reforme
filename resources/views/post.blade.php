@@ -55,13 +55,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-  <div class="content">
-        <a class="js-modal-open" href="">クリックでモーダルを表示</a>
-    </div>
     @foreach($posts as $post)
     <div id="{{$post->id}}" class="modal js-modal">
         <div class="modal__bg js-modal-close"></div>
