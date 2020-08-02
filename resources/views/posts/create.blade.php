@@ -13,6 +13,7 @@
               </div>
               <div class="form-group_title">
                 <select name="title" size="1" class="form-group_select">
+                  <option value="">選択してください</option>
                   <option value="Kitchen">Kitchen</option>
                   <option value="Bathroom">bathroom</option>
                   <option value="Washroom">Washroom</option>
@@ -40,7 +41,20 @@
                 <p>費用</p>
               </div>
               <div class="form-group-cost">
-                <input type="text" class="form-cost" name="cost" id="cost" value="{{ old('cost') }}" />
+                <select name="cost" size="1" class="form-group_select">
+                    <option value="">選択してください</option>
+                    <option value="10万円以下">10万円以下</option>
+                    <option value="10万円〜30万円">10万円〜30万円</option>
+                    <option value="30万円〜60万円">30万円〜60万円</option>
+                    <option value="60万円〜100万円">60万円〜100万円</option>
+                    <option value="100万円〜150万円">100万円〜150万円</option>
+                    <option value="150万円〜200万円">150万円〜200万円</option>
+                    <option value="200万円〜300万円">200万円〜300万円</option>
+                    <option value="300万円〜400万円">300万円〜400万円</option>
+                    <option value="400万円〜500万円">400万円〜500万円</option>
+                    <option value="500万円〜1000万円">500万円〜1000万円</option>
+                    <option value="1000万円以上">1000万円以上</option>
+                  </select>
               </div>
             </div> 
             <div class="form-group-box">
