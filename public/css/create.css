@@ -1,0 +1,77 @@
+.container {
+  background-size: cover;
+  background-position:50%;
+  background-image:url("/image/014.jpg");
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+}
+.post_create_form {
+  position: relative;
+  opacity: 0.8;
+}
+
+.post_create_form_box {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 100px;
+}
+
+.form-text {
+  width: 800px;
+  height: 300px;
+}
+.form-group-box {
+  /* display: flex; */
+}
+
+.form-group_menu {
+  font-size: 20px;
+}
+
+.form-store,.form-cost,.form-group_select {
+  width: 800px;
+  height: 40px;
+}
+
+.form-group-box {
+  margin-top: 30px;
+}
+
+.btn-primary {
+  display       : inline-block;
+  border-radius : 5%;
+  font-size     : 18pt;
+  text-align    : center;
+  cursor        : pointer;
+  padding       : 12px 12px;
+  background    : black;
+  color         : #ffffff;
+  line-height   : 1em;
+  transition    : .3s;
+  box-shadow    : 6px 6px 3px #666666;
+  border        : 2px solid #999999; 
+}
+
+.btn-primary:hover {
+  box-shadow    : none;
+  color         : #999999;
+  background    : #ffffff;
+}
+
+.botton-area {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.image-select {
+  width: 300px;
+  height: 300px;
+  background-color: #DDDDDD;
+}
+
+.image-select:hover {
+  border: solid 2px blue;
+}
+.form-image {
+display: none;
+}

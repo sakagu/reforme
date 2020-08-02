@@ -7,6 +7,7 @@
   <title>Reforme</title>
   <link rel="stylesheet" href="/css/reset.css">
   <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
 <header>
@@ -14,9 +15,6 @@
     <div class="header_left">
       <div class=header_title>
         <h1>Reforme</h1>
-      </div>
-      <div clas="header_subtitle">
-        <h2>〜自分だけのリフォーム〜</h2>
       </div>
     </div>
     @if(Auth::check())
@@ -52,6 +50,6 @@
 <main>
   @yield('content')
 </main>
-<!-- @yield('scripts') -->
+@yield('scripts')
 </body>
 </html>

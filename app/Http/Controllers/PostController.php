@@ -7,6 +7,7 @@ use App\Http\Requests\CreatePost;
 use App\Http\Requests\EditPost;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class PostController extends Controller
@@ -14,6 +15,9 @@ class PostController extends Controller
     public function index()
     {
         $posts = Post::all();
+        // $post = Post::find($id);
+        // $idid = $post->user_id;
+        // $user = Auth::find($idid);
 
         return view('post',[
             'posts' => $posts,
@@ -29,7 +33,17 @@ class PostController extends Controller
         $post = new Post();
         $post->title = $request->title;
         $post->text = $request->text;
-        $post->image = $request->image;
+        
+        // $path = $request->file('image')->store('public/storage');
+        // $post->image = basename($path);
+
+        $originalImg = $request->image;
+        if($originalImg->isValid()) {
+        $filePath = $originalImg->store('public');
+        $post->image = str_replace('public/', '', $filePath);
+        }
+
+
         Auth::user()->posts()->save($post);
 
         return redirect()->route('posts');
