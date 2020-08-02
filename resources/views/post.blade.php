@@ -19,7 +19,7 @@
       <div class="main_post_box">
         @foreach($posts as $post)
         <div class="main_post_box_contetnt">
-          <a href="{{route('posts.show',['id' => $post->id]) }}" class="post_box_post">
+          <a href="" class="post_box_post" data-target="{{$post->id}}">
             <div class="post_title{{$post->title}}">
               {{ $post->title }}
             </div>
@@ -55,5 +55,37 @@
       </div>
     </div>
   </div>
+
+
+
+
+  <div class="content">
+        <a class="js-modal-open" href="">クリックでモーダルを表示</a>
+    </div>
+    @foreach($posts as $post)
+    <div id="{{$post->id}}" class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+          <div class="modal-image">
+            <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 500px; height: 500px;"/>
+          </div>
+          <div class="modal-text">
+            {{$post->text}}
+          </div>
+          <div class="modal-cost">
+            {{$post->cost}}
+          </div>
+          <div class="modal-stpre">
+            {{$post->store}}
+          </div>
+
+          <a class="js-modal-close" href="">閉じる</a>
+        </div><!--modal__inner-->
+    </div><!--modal-->
+    @endforeach
   @endsection
+
+@section('scripts')
+  @include('share.modal')
+@endsection
   
