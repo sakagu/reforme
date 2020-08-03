@@ -2,11 +2,40 @@
 
 @section('content')
   <div class="main">
-
-    <div class="main_title">
-      <p>Reformeとは・・・</p>
-      <p>住宅リフォーム専用投稿サイトです</p>
-      <p>あなただけのリフォームを教えてください!!</p>
+    <div class="main_box">
+      <div class="main_title">
+        <p>Reforme</p>
+      </div>
+        <div class="main_title_version">
+          <p>~Please tell me your reform~</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="main_post"> 
+      <div class="main_post_title"> 
+        <h3>~ New arrival ~</h3>
+      </div>
+      <div class="main_post_box">
+        @foreach($posts as $post)
+        <div class="main_post_box_contetnt">
+          <a href="" class="post_box_post" data-target="{{$post->id}}">
+            <div class="post_title{{$post->title}}">
+              {{ $post->title }}
+            </div>
+            <div class="post_image">
+              <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 300px; height: 300px;"/>
+            </div>
+            <div class="post_user">
+              {{ $post->user->name }}さん
+            </div>
+            <div class="post_user">
+              業者名:{{ $post->store }}
+            </div>
+          </a>
+        </div>
+        @endforeach
+      </div>
     </div>
     <div class="main_explanation">
       <div class="main_explanation_1">
@@ -25,26 +54,32 @@
         </div>
       </div>
     </div>
-
-    <div class="main_post"> 
-      <div class="main_post_title"> 
-        <h3>~ New Reform ~</h3>
-      </div>
-      <div class="main_post_box">
-        @foreach($posts as $post)
-          <div class="main_post_box_contetnt">
-            <a href="{{route('posts.show',['id' => $post->id]) }}" class="post_box_post">
-              <div class="post_title">
-                {{ $post->title }}
-              </div>
-              <div class="post_image">
-                <img src="{{asset('image/'.$post->image) }}" alt="{{ $post->image }}">
-              </div>
-            </a>
-          </div>
-        @endforeach
-      </div>
-    </div>
-
   </div>
+    @foreach($posts as $post)
+    <div id="{{$post->id}}" class="modal js-modal">
+        <div class="modal__bg js-modal-close"></div>
+        <div class="modal__content">
+          <div class="modal-image">
+            <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 600px; height: 600px;"/>
+          </div>
+          <div class="modal-text">
+            {{$post->text}}
+          </div>
+          <div class="modal-cost">
+            {{$post->cost}}
+          </div>
+          <div class="modal-stpre">
+            {{$post->store}}
+          </div>
+          <a href="{{route('posts.edit',['id' => $post->id]) }}" class="post_box_edit">
+          変更
+          </a>
+        </div><!--modal__inner-->
+    </div><!--modal-->
+    @endforeach
+  @endsection
+
+@section('scripts')
+  @include('share.modal')
 @endsection
+  
