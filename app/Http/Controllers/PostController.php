@@ -16,10 +16,8 @@ class PostController extends Controller
 {
     public function index()
     {
-        $posts = Post::all();
-        // $post = Post::find($id);
-        // $idid = $post->user_id;
-        // $user = Auth::find($idid);
+        // $posts = Post::all();
+        $posts = Post::latest()->paginate(10);
 
         return view('post',[
             'posts' => $posts,
@@ -111,8 +109,8 @@ class PostController extends Controller
     public function usermypage($id)
     {
         if (Auth::user()->id == $id) {
-        $posts = Post::where('user_id',$id)->get();
-        $likes = Like::where('user_id',$id)->get();
+        $posts = Post::where('user_id',$id)->latest()->paginate(10);
+        $likes = Like::where('user_id',$id)->latest()->paginate(10);
         $postlikes = array();
         foreach($likes as $like){
             $postlikes[] = Post::find($like->post_id);

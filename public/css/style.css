@@ -194,3 +194,12 @@ top: 200px;
   color         : #999999;
   background    : #ffffff;
 }
+
+.pagination {
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+}
+.active {
+  color: red;
+}

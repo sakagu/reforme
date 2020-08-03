@@ -54,6 +54,9 @@
             </div>
           @endforeach
         </div>
+        <div class="pagination">
+          {{ $posts->links('vendor.pagination.default') }}
+        </div>
       </div>
 
 
@@ -96,6 +99,9 @@
               </a>
             </div>
           @endforeach
+        </div>
+        <div class="pagination">
+          {{ $posts->links('vendor.pagination.default') }}
         </div>
       </div>
     </div>
