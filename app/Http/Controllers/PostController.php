@@ -53,42 +53,54 @@ class PostController extends Controller
         return redirect()->route('posts');
     }
 
-    public function show($id) {
-        $post = Post::findOrFail($id); // findOrFail 見つからなかった時の例外処理
+    // public function show($id) {
+    //     $post = Post::findOrFail($id); // findOrFail 見つからなかった時の例外処理
   
-        $like = $post->likes()->where('user_id', Auth::user()->id)->first();
+    //     $like = $post->likes()->where('user_id', Auth::user()->id)->first();
   
-        return view('posts.show')->with(array('post' => $post, 'like' => $like));
-      }
+    //     return view('posts.show')->with(array('post' => $post, 'like' => $like));
+    //   }
 
     public function showedit(int $id)
     {
         $post = Post::find($id);
-
+        if (Auth::user()->id == $post->user_id) {
         return view('posts/edit', [
             'post' => $post,
         ]);
+        }else{
+            return redirect()->route('posts');
+        }
     }
 
     public function edit(int $id, EditPost $request)
     {
+        
         $post = Post::find($id);
         $post->title = $request->title;
         $post->text = $request->text;
         if(isset($request->image)){
             $post->image = $request->image;
         }
-        $post->save();
-
-        return redirect()->route('posts');
+         if (Auth::user()->id == $post->user_id) {
+                          
+             $post->save();
+             
+             return redirect()->route('posts');
+        }else{
+            return redirect()->route('posts');
+        }
     
     }
 
     public function delete(int $id, Request $request)
     {
         Post::find($id)->delete();
-
+        if (Auth::user()->id == $post->user_id) {
         return redirect()->route('posts');
+        }else{
+            return redirect()->route('posts');
+        }
     }
     
     public function __construct()
@@ -98,6 +110,7 @@ class PostController extends Controller
 
     public function usermypage($id)
     {
+        if (Auth::user()->id == $id) {
         $posts = Post::where('user_id',$id)->get();
         $likes = Like::where('user_id',$id)->get();
         $postlikes = array();
@@ -108,6 +121,9 @@ class PostController extends Controller
             'posts' => $posts,
             'postlikes' => $postlikes,
         ]);
+        }else{
+            return redirect()->route('posts');
+        }
     }
 
 

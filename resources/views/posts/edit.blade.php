@@ -11,6 +11,13 @@
               <div class="form-group_menu">
                 <p>カテゴリー</p>
               </div>
+              @if($errors->any())
+              @if((old('title')) == '')
+              <div class="errors-message">
+                <p>カテゴリは選択してください</p>
+              </div>
+              @endif
+              @endif
               <div class="form-group_title">
                 <select name="title" size="1" class="form-group_select">
                 <option value="{{$post->title}}" selected>{{$post->title}}</option>
@@ -63,6 +70,13 @@
               <div class="form-group_menu">
                 <p>こだわりポイント</p>
               </div>
+              @if($errors->any())
+                @if((old('text')) == '')
+                <div class="errors-message">
+                  <p>こだわりポイントは必ず入力してください</p>
+                </div>
+                @endif
+              @endif
               <div class="form-group-text">
                 <input type="text" class="form-text" name="text" id="text" value="{{ old('text') ?? $post->text }}" />
               </div>
@@ -71,6 +85,13 @@
               <div class="form-group_menu">
                 <p>写真</p>
               </div>
+              @if($errors->any())
+              @if((old('image')) == '')
+              <div class="errors-message">
+                <p>写真は必ず投稿してください</p>
+              </div>
+              @endif
+              @endif
               <div class="form-group-image">
                 <label for="image">
                   <div class="image-select">

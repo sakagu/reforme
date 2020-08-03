@@ -75,3 +75,7 @@
 .form-image {
 display: none;
 }
+
+.errors-message {
+  color: red;
+}
