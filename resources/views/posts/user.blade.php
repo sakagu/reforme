@@ -117,9 +117,17 @@
             <div class="modal-stpre">
               {{$post->store}}
             </div>
+            <div class="post-box-edit-menu">
             <a href="{{route('posts.edit',['id' => $post->id]) }}" class="post_box_edit">
-              変更
+              <div class="btn-primary">
+                変更
+              </div>
             </a>
+            <form action="{{ route('posts.delete', ['id' => $post->id]) }}" method="post">
+              {{ csrf_field() }}
+              <input type="submit" name="delete" value="削除" onClick="delete_alert(event);return false;" class="btn-primary">
+            </form>
+          </div>
           </div><!--modal__inner-->
         </div><!--modal-->
       @endforeach
