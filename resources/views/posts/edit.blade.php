@@ -15,17 +15,17 @@
                 <select name="title" size="1" class="form-group_select">
                 <option value="{{$post->title}}" selected>{{$post->title}}</option>
                   <option value="">選択してください</option>
-                  <option value="Kitchen">Kitchen</option>
-                  <option value="Bathroom">bathroom</option>
-                  <option value="Washroom">Washroom</option>
-                  <option value="Toilet">Toilet</option>
-                  <option value="Entrance">Entrance</option>
-                  <option value="Door">Door</option>
-                  <option value="Floor">Floor</option>
-                  <option value="Interior">Interior</option>
-                  <option value="Renovation">Renovation</option>
-                  <option value="Bedroom">Bedroom</option>
-                  <option value="Other">Other</option>
+                  <option value="Kitchen" @if(old('title')=='Kitchen') selected  @endif>Kitchen</option>
+                  <option value="Bathroom" @if(old('title')=='Bathroom') selected  @endif>bathroom</option>
+                  <option value="Washroom" @if(old('title')=='Washroom') selected  @endif>Washroom</option>
+                  <option value="Toilet" @if(old('title')=='Toilet') selected  @endif>Toilet</option>
+                  <option value="Entrance" @if(old('title')=='Entrance') selected  @endif>Entrance</option>
+                  <option value="Door" @if(old('title')=='Door') selected  @endif>Door</option>
+                  <option value="Floor" @if(old('title')=='Floor') selected  @endif>Floor</option>
+                  <option value="Interior" @if(old('title')=='Interior') selected  @endif>Interior</option>
+                  <option value="Renovation" @if(old('title')=='Renovation') selected  @endif>Renovation</option>
+                  <option value="Bedroom" @if(old('title')=='Bedroom') selected  @endif>Bedroom</option>
+                  <option value="Other" @if(old('title')=='Other') selected  @endif>Other</option>
                 </select>
               </div>
             </div>
@@ -45,17 +45,17 @@
                 <select name="cost" size="1" class="form-group_select">
                     <option value="{{$post->cost}}" selected>{{$post->cost}}</option>
                     <option value="">選択してください</option>
-                    <option value="10万円以下">10万円以下</option>
-                    <option value="10万円〜30万円">10万円〜30万円</option>
-                    <option value="30万円〜60万円">30万円〜60万円</option>
-                    <option value="60万円〜100万円">60万円〜100万円</option>
-                    <option value="100万円〜150万円">100万円〜150万円</option>
-                    <option value="150万円〜200万円">150万円〜200万円</option>
-                    <option value="200万円〜300万円">200万円〜300万円</option>
-                    <option value="300万円〜400万円">300万円〜400万円</option>
-                    <option value="400万円〜500万円">400万円〜500万円</option>
-                    <option value="500万円〜1000万円">500万円〜1000万円</option>
-                    <option value="1000万円以上">1000万円以上</option>
+                    <option value="10万円以下" @if(old('cost')=='10万円以下') selected  @endif>10万円以下</option>
+                    <option value="10万円〜30万円" @if(old('cost')=='10万円〜30万円') selected  @endif>10万円〜30万円</option>
+                    <option value="30万円〜60万円" @if(old('cost')=='30万円〜60万円') selected  @endif>30万円〜60万円</option>
+                    <option value="60万円〜100万円" @if(old('cost')=='60万円〜100万円') selected  @endif>60万円〜100万円</option>
+                    <option value="100万円〜150万円" @if(old('cost')=='100万円〜150万円') selected  @endif>100万円〜150万円</option>
+                    <option value="150万円〜200万円" @if(old('cost')=='150万円〜200万円') selected  @endif>150万円〜200万円</option>
+                    <option value="200万円〜300万円" @if(old('cost')=='200万円〜300万円') selected  @endif>200万円〜300万円</option>
+                    <option value="300万円〜400万円" @if(old('cost')=='300万円〜400万円') selected  @endif>300万円〜400万円</option>
+                    <option value="400万円〜500万円" @if(old('cost')=='400万円〜500万円') selected  @endif>400万円〜500万円</option>
+                    <option value="500万円〜1000万円" @if(old('cost')=='500万円〜1000万円') selected  @endif>500万円〜1000万円</option>
+                    <option value="1000万円以上" @if(old('cost')=='1000万円以上') selected  @endif>1000万円以上</option>
                   </select>
               </div>
             </div> 

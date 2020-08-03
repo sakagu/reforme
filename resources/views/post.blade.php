@@ -71,6 +71,9 @@
           <div class="modal-stpre">
             {{$post->store}}
           </div>
+          <a href="{{route('posts.edit',['id' => $post->id]) }}" class="post_box_edit">
+          変更
+          </a>
         </div><!--modal__inner-->
     </div><!--modal-->
     @endforeach
