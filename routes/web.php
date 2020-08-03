@@ -24,4 +24,7 @@ Route::get('/posts/{id}/edit', 'PostController@showedit')->name('posts.edit');
 Route::post('/posts/{id}/edit', 'PostController@edit');
 Route::post('/posts/{id}/delete', 'PostController@delete')->name('posts.delete');
 });
+Route::post('/posts/{post}/likes', 'LikesController@store');
+Route::post('/posts/{post}/likes/{like}', 'LikesController@destroy');
+Route::get('/posts/{user}/user', 'PostController@usermypage')->name('posts.user');
 Auth::routes();

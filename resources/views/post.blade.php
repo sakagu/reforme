@@ -19,10 +19,31 @@
       <div class="main_post_box">
         @foreach($posts as $post)
         <div class="main_post_box_contetnt">
-          <a href="" class="post_box_post" data-target="{{$post->id}}">
+          <div class="post_title-box">
             <div class="post_title{{$post->title}}">
               {{ $post->title }}
             </div>
+            @if (Auth::check())
+            @if ($post->likes()->where('user_id', Auth::user()->id)->first())
+            {{ Form::model($post, array('action' => array('LikesController@destroy', $post->id, $post->likes()->where('user_id', Auth::user()->id)->first()->id))) }}
+            <button type="submit">
+              <!-- <img src="/images/icon_heart_red.svg"> -->
+              <i class="fas fa-star"></i>
+              Like {{ $post->likes_count }}
+            </button>
+            {!! Form::close() !!}
+            @else
+            {{ Form::model($post, array('action' => array('LikesController@store', $post->id))) }}
+            <button type="submit">
+              <i class="far fa-star"></i>
+              <!-- <img src="/images/icon_heart.svg"> -->
+              Like {{ $post->likes_count }}
+            </button>
+            {!! Form::close() !!}
+            @endif
+            @endif
+          </div>
+            <a href="" class="post_box_post" data-target="{{$post->id}}">
             <div class="post_image">
               <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 300px; height: 300px;"/>
             </div>
@@ -37,6 +58,7 @@
         @endforeach
       </div>
     </div>
+    
     <div class="main_explanation">
       <div class="main_explanation_1">
         <div class="main_explanation_1_1">

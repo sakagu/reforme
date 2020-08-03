@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Post;
+use App\User;
+use App\Like;
 use App\Http\Requests\CreatePost;
 use App\Http\Requests\EditPost;
 use Illuminate\Support\Facades\Auth;
@@ -51,14 +53,13 @@ class PostController extends Controller
         return redirect()->route('posts');
     }
 
-    public function show(int $id)
-    {
-        $post = Post::find($id);
-
-        return view('posts/show', [
-            'post' => $post,
-        ]);
-    }
+    public function show($id) {
+        $post = Post::findOrFail($id); // findOrFail 見つからなかった時の例外処理
+  
+        $like = $post->likes()->where('user_id', Auth::user()->id)->first();
+  
+        return view('posts.show')->with(array('post' => $post, 'like' => $like));
+      }
 
     public function showedit(int $id)
     {
@@ -90,4 +91,24 @@ class PostController extends Controller
         return redirect()->route('posts');
     }
     
+    public function __construct()
+    {
+      $this->middleware('auth', array('except' => 'index'));
+    }
+
+    public function usermypage($id)
+    {
+        $posts = Post::where('user_id',$id)->get();
+        $likes = Like::where('user_id',$id)->get();
+        $postlikes = array();
+        foreach($likes as $like){
+            $postlikes[] = Post::find($like->post_id);
+            }
+        return view('posts/user',[
+            'posts' => $posts,
+            'postlikes' => $postlikes,
+        ]);
+    }
+
+
 }

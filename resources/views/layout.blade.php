@@ -13,14 +13,21 @@
 <header>
   <div class="header_label">
     <div class="header_left">
-      <div class=header_title>
-        <h1>Reforme</h1>
-      </div>
+      <a href="{{route('posts') }}">
+        <div class=header_title>
+          <h1>Reforme</h1>
+        </div>
+      </a>
     </div>
     @if(Auth::check())
       <div class="header_right">
           <div class="header_right_box">
-              <p>{{ Auth::user()->name }}</p>
+            <a href="{{route('posts.user',['user' => Auth::user()]) }}" class="post_box_user">
+              <div class="header-login-icon">
+                <i class="fas fa-user-circle"></i>
+                <p>{{ Auth::user()->name }}</p>
+              </div>
+            </a>
           </div>
           <div class="header_right_box">
             <a href="#" id="logout" class="my-navbar-item">Logout</a>

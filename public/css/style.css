@@ -1,16 +1,12 @@
 .header_label {
-/* height: 100px; */
 background-color: #C0C0C0;
+position: relative;
+z-index: 10;
 }
 .main_box {
   background-image:url("/image/001.jpg");
   background-size: cover;
   background-position:50%;
-  height: 500px;
-}
-
-.main {
-  background-color: #DDDDDD;
 }
 
 .header_title {
@@ -30,15 +26,27 @@ background-color: #C0C0C0;
   display: flex;
   margin-left: auto;
 }
+.fa-pencil-alt {
+  margin-top: 5px;
+}
 .my-navbar-item:hover,.header_rightbox:hover {
   color: red;
+}
+
+.header-login-icon{
+  display: flex;
+}
+.header-login-icon:hover {
+  color: red;
+}
+.fa-user-circle {
+  padding-top: 8px;
 }
 
 .header_right_box {
   margin-right: 20px;
   
 }
-
 
 .main {
   width: 100%;
@@ -107,6 +115,10 @@ top: 50px;
   font-size: 20px;
 }
 
+.post_title-box {
+  display: flex;
+  justify-content: space-between;
+}
 
 
 
