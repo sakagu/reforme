@@ -70,7 +70,7 @@
         </div>
         <div class="main_explanation_2">
           <div class="main_explanation_2_1">
-            <p>リフォームをご検討の方は参考に！!</p>
+            <p>リフォームをご検討の方は参考に!</p>
           </div>
         </div>
         <div class="main_explanation_3">
