@@ -36,14 +36,15 @@ class PostController extends Controller
         $post->cost = $request->cost;
         $post->store = $request->store;
         
-        // $path = $request->file('image')->store('public/storage');
-        // $post->image = basename($path);
+        $uploadImg = $post->image = $request->file('image');
+        $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
+        $post->image = Storage::disk('s3')->url($path);
 
-        $originalImg = $request->image;
-        if($originalImg->isValid()) {
-        $filePath = $originalImg->store('public');
-        $post->image = str_replace('public/', '', $filePath);
-        }
+        // $originalImg = $request->image;
+        // if($originalImg->isValid()) {
+        // $filePath = $originalImg->store('public');
+        // $post->image = str_replace('public/', '', $filePath);
+        // }
 
 
         Auth::user()->posts()->save($post);
