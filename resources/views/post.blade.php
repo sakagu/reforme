@@ -58,21 +58,24 @@
           @endforeach
         </div>
       </div>
+      <div class="pagination">
+        {{ $posts->links('vendor.pagination.default') }}
+      </div>
       
       <div class="main_explanation">
         <div class="main_explanation_1">
           <div class="main_explanation_1_1">
-           <p>デザインやこだわりポイントを自慢してみましょう！</p>
+            <p>デザインやこだわりポイントを自慢してみましょう！</p>
           </div>
         </div>
         <div class="main_explanation_2">
           <div class="main_explanation_2_1">
-            <p>リフォームをご検討の方は参考に！下調べは重要です！</p>
+            <p>リフォームをご検討の方は参考に！</p>
           </div>
         </div>
         <div class="main_explanation_3">
           <div class="main_explanation_3_1">
-            <p>リフォーム業者を検索してみよう！お願したい会社が見つかるかも！</p>
+            <p>リフォーム業者を検索してみよう！</p>
           </div>
         </div>
       </div>
