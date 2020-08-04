@@ -45,7 +45,7 @@
             </div>
               <a href="" class="post_box_post" data-target="{{$post->id}}">
               <div class="post_image">
-                <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 300px; height: 300px;"/>
+                <img src="{{$post->image}}" alt="image" style="width: 300px; height: 300px;"/>
               </div>
               <div class="post_user">
                 {{ $post->user->name }}さん
@@ -61,7 +61,7 @@
       <div class="pagination">
         {{ $posts->links('vendor.pagination.default') }}
       </div>
-      
+  
       <div class="main_explanation">
         <div class="main_explanation_1">
           <div class="main_explanation_1_1">
