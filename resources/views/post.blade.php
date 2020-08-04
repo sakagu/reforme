@@ -61,7 +61,7 @@
       <div class="pagination">
         {{ $posts->links('vendor.pagination.default') }}
       </div>
-      
+  
       <div class="main_explanation">
         <div class="main_explanation_1">
           <div class="main_explanation_1_1">
