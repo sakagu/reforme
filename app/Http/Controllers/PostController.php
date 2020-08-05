@@ -71,7 +71,7 @@ class PostController extends Controller
         }
     }
 
-    public function edit(int $id, Request $request)
+    public function edit(int $id, EditPost $request)
     {
         $post = Post::find($id);
         $post->title = $request->title;

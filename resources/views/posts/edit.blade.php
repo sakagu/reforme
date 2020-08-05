@@ -88,7 +88,7 @@
               @if($errors->any())
               @if((old('image')) == '')
               <div class="errors-message">
-                <p>写真は必ず投稿してください。(拡張子jpeg,png,jpg,gifのみ)</p>
+                <p>写真は必ず投稿してください。(10M以下・拡張子jpeg,png,jpg,gifのみ)</p>
               </div>
               @endif
               @endif
