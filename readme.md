@@ -7,8 +7,8 @@
 </br>
 ・GitURL:https://github.com/sakagu/reforme</br>
 ・開発環境:html,CSS,PHP,laravel,MySQL,GitHub,AWS(S3),heroku</br>
-・内容</br>
 </br>
+・内容</br>
 &emsp;●概要:自身の住宅リフォームを投稿できるアプリです。</br>
 &emsp;●実装機能:ユーザ登録,ログイン・ログアウト,投稿,お気に入り登録,マイページ</br>
 </br>
