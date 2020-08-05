@@ -26,7 +26,7 @@ class EditPost extends FormRequest
         return [
             'title' => 'required',
             'text' => 'required',
-            'image' => 'images|mimes:jpeg,png,jpg,gif|max:10240|',
+            'image' => 'image|mimes:jpeg,png,jpg,gif|max:10240|',
         ];
     }
 }

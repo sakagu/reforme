@@ -42,7 +42,7 @@ return [
     'exists'               => 'The selected :attribute is invalid.',
     'file'                 => 'The :attribute must be a file.',
     'filled'               => 'The :attribute field must have a value.',
-    'image'                => 'The :attribute must be an image.',
+    'image'                => '写真は必ず投稿してください。(10M以下・拡張子jpeg,png,jpg,gifのみ)',
     'in'                   => 'The selected :attribute is invalid.',
     'in_array'             => 'The :attribute field does not exist in :other.',
     'integer'              => 'The :attribute must be an integer.',
@@ -56,7 +56,7 @@ return [
         'string'  => 'The :attribute may not be greater than :max characters.',
         'array'   => 'The :attribute may not have more than :max items.',
     ],
-    'mimes'                => 'The :attribute must be a file of type: :values.',
+    'mimes'                => '写真は必ず投稿してください。(10M以下・拡張子jpeg,png,jpg,gifのみ)',
     'mimetypes'            => 'The :attribute must be a file of type: :values.',
     'min'                  => [
         'numeric' => 'The :attribute must be at least :min.',

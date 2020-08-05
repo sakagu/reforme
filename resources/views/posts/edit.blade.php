@@ -6,7 +6,7 @@
       <div class="post_create_form_box">
         <form enctype="multipart/form-data" action="{{ route('posts.edit', ['id' => $post->id] ) }}" method="post">
           {{ csrf_field() }}
-          <div class="form-group">
+           <div class="form-group">
             <div class="form-group-box">
               <div class="form-group_menu">
                 <p>カテゴリー</p>
@@ -86,11 +86,9 @@
                 <p>写真</p>
               </div>
               @if($errors->any())
-              @if((old('image')) == '')
               <div class="errors-message">
-                <p>写真は必ず投稿してください。(10M以下・拡張子jpeg,png,jpg,gifのみ)</p>
+                <p>{{ $errors->first('image') }}</P>
               </div>
-              @endif
               @endif
               <div class="form-group-image">
                 <label for="image">
