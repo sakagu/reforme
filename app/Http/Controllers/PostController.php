@@ -71,16 +71,19 @@ class PostController extends Controller
         }
     }
 
-    public function edit(int $id, EditPost $request)
+    public function edit(int $id, Request $request)
     {
-        
         $post = Post::find($id);
         $post->title = $request->title;
         $post->text = $request->text;
         if(isset($request->image)){
-            $post->image = $request->image;
+            
+            $uploadImg = $post->image = $request->file('image');
+            $path = Storage::disk('s3')->putFile('/', $uploadImg, 'public');
+            $post->image = Storage::disk('s3')->url($path);
+
         }
-         if (Auth::user()->id == $post->user_id) {
+         if (Auth::user()->id == Post::find($id)->user_id) {
                           
              $post->save();
              
@@ -93,7 +96,11 @@ class PostController extends Controller
 
     public function delete(int $id, Request $request)
     {
+        $post = Post::find($id);
+        $image = basename($post->image);
         Post::find($id)->delete();
+        Storage::disk('s3')->delete('/', $image);
+
         if (Auth::user()->id == $post->user_id) {
         return redirect()->route('posts');
         }else{

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="post_create_form">
       <div class="post_create_form_box">
-        <form enctype="multipart/form-data" action="{{ route('posts.create') }}" method="post">
+        <form enctype="multipart/form-data" action="{{ route('posts.edit', ['id' => $post->id] ) }}" method="post">
           {{ csrf_field() }}
           <div class="form-group">
             <div class="form-group-box">
@@ -88,7 +88,7 @@
               @if($errors->any())
               @if((old('image')) == '')
               <div class="errors-message">
-                <p>写真は必ず投稿してください</p>
+                <p>写真は必ず投稿してください。(拡張子jpeg,png,jpg,gifのみ)</p>
               </div>
               @endif
               @endif

@@ -26,7 +26,7 @@ class CreatePost extends FormRequest
         return [
             'title' => 'required',
             'text' => 'required',
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:10240|',
         ];
     }
 }
