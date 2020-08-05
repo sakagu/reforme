@@ -42,7 +42,7 @@
               </div>
               <a href="" class="post_box_post" data-target="{{$post->id}}">
                 <div class="post_image">
-                  <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 300px; height: 300px;"/>
+                  <img src="{{$post->image}}" alt="image" style="width: 300px; height: 300px;"/>
                 </div>
                 <div class="post_user">
                   {{ $post->user->name }}さん
@@ -88,7 +88,7 @@
               </div>
               <a href="" class="post_box_post" data-target="{{$post->id}}">
                 <div class="post_image">
-                  <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 300px; height: 300px;"/>
+                  <img src="{{$post->image}}" alt="image" style="width: 300px; height: 300px;"/>
                 </div>
                 <div class="post_user">
                   {{ $post->user->name }}さん
@@ -112,7 +112,7 @@
           </div>
           <div class="modal__content">
             <div class="modal-image">
-              <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 600px; height: 600px;"/>
+              <img src="{{$post->image}}" alt="image" style="width: 600px; height: 600px;"/>
             </div>
             <div class="modal-text">
               {{$post->text}}

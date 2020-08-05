@@ -96,7 +96,7 @@
                 <label for="image">
                   <div class="image-select">
                     <div class= "image">
-                      <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 300px; height: 300px;"/>
+                      <img src="{{$post->image}}" alt="image" style="width: 300px; height: 300px;"/>
                     </div>
                   <div>
                 </label>

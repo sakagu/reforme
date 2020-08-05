@@ -87,7 +87,7 @@
         <div class="modal__bg js-modal-close"></div>
         <div class="modal__content">
           <div class="modal-image">
-            <img src="{{ asset('/storage/'.$post->image) }}" alt="image" style="width: 600px; height: 600px;"/>
+            <img src="{{$post->image}}" alt="image" style="width: 600px; height: 600px;"/>
           </div>
           <div class="modal-text">
             {{$post->text}}
