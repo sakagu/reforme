@@ -22,9 +22,6 @@ class LikesController extends Controller
 
         $post = Post::findOrFail($postId);
 
-        // return redirect()
-        //      ->action('PostController@show', $post->id);
-        // return redirect()->route('posts');
         return back();
     }
 
@@ -32,9 +29,6 @@ class LikesController extends Controller
       $post = Post::findOrFail($postId);
       $post->like_by()->findOrFail($likeId)->delete();
 
-    //   return redirect()
-    //          ->action('PostController@show', $post->id);
-    // return redirect()->route('posts');
-    return back();
+      return back();
     }
 }
