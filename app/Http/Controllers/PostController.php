@@ -16,7 +16,6 @@ class PostController extends Controller
 {
     public function index()
     {
-        // $posts = Post::all();
         $posts = Post::latest()->paginate(10);
 
         return view('post',[
@@ -52,10 +51,8 @@ class PostController extends Controller
     }
 
     // public function show($id) {
-    //     $post = Post::findOrFail($id); // findOrFail 見つからなかった時の例外処理
-  
+    //     $post = Post::find($id);
     //     $like = $post->likes()->where('user_id', Auth::user()->id)->first();
-  
     //     return view('posts.show')->with(array('post' => $post, 'like' => $like));
     //   }
 
